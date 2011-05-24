@@ -1,0 +1,9 @@
+what I need to do to be able to buy
+
+in the store class make a def that asks how many of the item they want and pass the item and amount into player add item def
+
+make a checker in player to see if you have enough money
+
+the amount required is the amount of the item times the cost
+
+if you can afford it take away the money and add the items to the inventory array 

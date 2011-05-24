@@ -1,0 +1,121 @@
+how to make a map system
+
+make a 10 by 10 map system 
+
+-------------------------------
+|0 |1 |2 |3 |4 |5 |6 |7 |8 |9 |
+|10|11|12|13|14|15|16|17|18|19|
+|20|21|22|23|24|25|26|27|28|29|
+|30|31|32|33|34|35|36|37|38|39|
+|40|41|42|43|44|45|46|47|48|49|
+|50|51|52|53|54|55|56|57|58|59|
+|60|61|62|63|64|65|66|67|68|69|
+|70|71|72|73|74|75|76|77|78|79|
+|80|81|82|83|84|85|86|87|88|89|
+|90|91|92|93|94|95|96|97|98|99|
+-------------------------------
+
+
+-------------------------------- --------------------------------
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|         map 0                @ @          map 1               @
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+---------------@---------------- ---------------@----------------
+---------------@---------------- ---------------@----------------
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|        map 10                @ @         map 11               @
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+|                              | |                              |
+---------------@---------------- ---------------@----------------
+
+
+
+
+moving a map right +'s 1 from curr_map
+moving a map left -'s 1 from curr_map
+moving a map up +'s 10 from curr_map
+moving a map down -'s 10 from curr_map
+
+only hitting certain predefined spots on the map will move you to the other map
+
+methods would look like
+
+def change_map (move)
+	case move
+		when right
+			map += 1
+		when left
+			map -= 1
+		when up
+			map += 10
+		when down
+			map -= 10
+		else
+			#don't change the map
+	end
+	load map_arr[map]
+end
+
+def get_portal_number
+	Portal.check_pnum
+end
+
+def check_portal(portal_num)
+	case portal_num
+		when 1
+			change_map(up)
+		when 2
+			chagne_map(right)
+		when 3
+			change_map(down)
+		when 4
+			change_map(left)
+		else
+			#add more stuff later do nothing for now
+	end
+end
+	
+	
+	#move() #either right, left, up, down => 1, -1, 10, -10
+	
+
+
+class Portal
+	def initialize(pnum, x, y)
+		@pnum = pnum
+		@x = x
+		@y = y
+	end
+	
+	def check_pnum
+		Map.check_portal "@pnum"
+	end
+end
+
+
+#creates 4 directional portals on a map
+portalOne = Portal.new(1, 250, 500) #creates a portal that goes up at the middle top
+portalTwo = Portal.new(2, 500, 250) #creates a portal that goes right at the middle right
+portalThree = Portal.new(3, 250, 0) #creates a portal that goes down at the middle bottom
+portalFour = Portal.new(4, 0, 250)  #creates a portal that goes left at the middle left
+
+
+
+
+
+

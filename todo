@@ -1,0 +1,27 @@
+to do list
+
+fix the checkers for the stat init
+
+add a .cap to the class name puts
+
+add items to the @inv array (see comments in player.rb add_item def)
+
+
+
+---
+afterward ---- (no particular order)
+
+add location moving
+
+add equips and a equip switcher
+
+make the combat system 
+
+work on the portals and map system code 
+
+add more shops and start thinking of all the items in the game
+
+think of a story line and how the gameplay will work
+
+look into doing the graphical aspect for the game
+
